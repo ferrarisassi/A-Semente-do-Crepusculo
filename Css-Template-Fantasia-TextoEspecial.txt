@@ -1,0 +1,7 @@
+magic-text for important magical text
+
+ancient-text for old-looking text
+
+magical and ancient classes for images
+
+pulse-in for animated text reveals

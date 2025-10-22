@@ -1,0 +1,254 @@
+/* 
+	Fantasy Twine CSS Template
+	
+	Mystical fantasy theme with magical colors and medieval styling
+		
+	- Version:  1.0
+	- Author:   Based on Daniel Talsky's template
+
+	
+	FANTASY COLORS
+
+	- background: Deep mystical night
+	- sidebar: Ancient parchment
+	- text: Aged paper color
+	- accents: Magical gold and royal purple
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;600;700&family=UnifrakturMaguntia&display=swap');
+
+/* These are the default options for the entire browser window */
+tw-story {	
+	background-color: #1a0a2b; 
+	/* Mystical deep purple background */
+	background-image: 
+		radial-gradient(circle at 10% 20%, rgba(97, 25, 138, 0.2) 0%, transparent 20%),
+		radial-gradient(circle at 90% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 20%);
+	color: #e8d8b5;
+	/* Fantasy medieval fonts */
+	font-family: 'Cinzel', 'MedievalSharp', serif;
+	font-size: 1.2em;
+	line-height: 1.6;
+}
+
+/* These are the default options for the each passage area */
+tw-passage {
+	background-color: rgba(245, 235, 220, 0.05);
+	background-image: 
+		linear-gradient(rgba(245, 235, 220, 0.1) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(245, 235, 220, 0.1) 1px, transparent 1px);
+	background-size: 20px 20px;
+    max-width: 60em;
+    margin: 2em auto 0 auto;
+	padding: 2em;
+	border: 2px solid #8b6914;
+	border-image: linear-gradient(45deg, #8b6914, #ffd700, #8b6914) 1;
+	box-shadow: 
+		0 0 20px rgba(139, 105, 20, 0.3),
+		inset 0 0 20px rgba(139, 105, 20, 0.2);
+	position: relative;
+}
+
+/* Create a decorative top border */
+tw-passage::before {
+	content: "";
+	position: absolute;
+	top: -10px;
+	left: 10%;
+	right: 10%;
+	height: 6px;
+	background: linear-gradient(90deg, transparent, #ffd700, #8b6914, #ffd700, transparent);
+	border-radius: 3px;
+}
+
+/* The sidebar with scoring and the back button */
+tw-sidebar { 
+	background: #2c1a0f;
+	background-image: 
+		linear-gradient(rgba(139, 69, 19, 0.3) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(139, 69, 19, 0.3) 1px, transparent 1px);
+	background-size: 15px 15px;
+	color: #d2b48c;
+	border: 1px solid #8b4513;
+	border-radius: 0;
+	font-family: 'MedievalSharp', cursive;
+	padding: 10px;
+	box-shadow: 0 0 15px rgba(139, 69, 19, 0.4);
+}
+
+/* 
+  MAGICAL LINK STYLES
+  
+  Fantasy-themed links that look like magical runes or ancient text
+*/
+.enchantment-link, tw-link, a {
+	color: #ffd700; 
+	font-weight: bold;
+	font-family: 'MedievalSharp', cursive;
+	text-decoration: none;
+	text-shadow: 
+		0 0 8px #ffd700,
+		0 0 15px #ff4500,
+		2px 2px 3px rgba(0, 0, 0, 0.5);
+	border-bottom: 1px dotted #ffd700;
+	padding: 0 2px 2px 2px;
+	transition: all 0.3s ease;
+	position: relative;
+}
+
+/* Add a subtle glow effect on hover */
+.enchantment-link:hover, tw-link:hover, a:hover {
+	color: #fff8dc;
+	text-shadow: 
+		0 0 12px #fff8dc,
+		0 0 20px #ff6347,
+		0 0 30px #ff4500;
+	border-bottom: 1px solid #fff8dc;
+	transform: translateY(-1px);
+}
+
+/* Visited links look like faded ancient text */
+.enchantment-link:visited, tw-link:visited, .enchantment-link.visited, tw-link.visited, a:visited {
+	color: #cd7f32;
+	text-shadow: 
+		0 0 5px #cd7f32,
+		0 0 8px #8b4513,
+		2px 2px 3px rgba(0, 0, 0, 0.5);
+	border-bottom: 1px dotted #cd7f32;
+}
+
+/*
+	MAGICAL EFFECTS
+
+	Fantasy-themed pulse effect for important text reveals
+*/
+@keyframes magical-pulse {
+  0% { 
+	  color: #ffd700; 
+	  text-shadow: 0 0 10px #ffd700, 0 0 20px #ff4500;
+	  transform: scale(1);
+  }
+  50% { 
+	  color: #fff8dc; 
+	  text-shadow: 0 0 20px #fff8dc, 0 0 40px #ff6347;
+	  transform: scale(1.05);
+  }
+  100% { 
+	  color: #ffd700; 
+	  text-shadow: 0 0 10px #ffd700, 0 0 20px #ff4500;
+	  transform: scale(1);
+  }
+}
+
+.pulse-in {
+    color: #ffd700;
+    animation: magical-pulse 1.2s ease-in-out 3;
+    font-weight: bold;
+}
+
+/* Special styling for important text */
+.magic-text {
+	color: #9370db;
+	text-shadow: 0 0 5px #9370db;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.ancient-text {
+	color: #d2b48c;
+	font-family: 'UnifrakturMaguntia', cursive;
+	font-size: 1.3em;
+	text-shadow: 1px 1px 2px #000;
+}
+
+/* IMAGE STYLES - Fantasy themed borders */
+
+/* styles for all images by default */
+img {
+	border: 2px solid #8b6914;
+	border-radius: 3px;
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Magical glowing images */
+img.magical {
+	border: 2px solid #9370db;
+	box-shadow: 
+		0 0 10px #9370db,
+		3px 3px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Ancient parchment-like images */
+img.ancient {
+	border: 3px double #8b4513;
+	background-color: #f5e6d3;
+	padding: 5px;
+}
+
+/* Full width images with fantasy styling */
+img.full-width {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	width: 100%;
+	border: 3px solid #8b6914;
+	border-image: linear-gradient(45deg, #8b6914, #ffd700, #8b6914) 1;
+}
+
+/* Headings with fantasy style */
+h1, h2, h3, h4, h5, h6 {
+	color: #ffd700;
+	text-shadow: 
+		2px 2px 3px #000,
+		0 0 5px #8b6914;
+	font-family: 'MedievalSharp', cursive;
+	border-bottom: 1px solid #8b6914;
+	padding-bottom: 0.3em;
+}
+
+/* 
+	TABLET-SPECIFIC RULES / SMALL WIDTH BROWSERS
+	Adjusted for fantasy theme
+*/
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+
+  tw-story {
+	  font-size: 2.2em;
+	  width: 100%;
+	  max-width: 95%;
+	  margin: 0 auto 0 auto;
+	  padding: 10% 5%;
+  }
+
+  tw-passage {
+	  width: 100%;
+	  padding: 1.5em;
+  }  
+
+}	
+
+/*
+	MOBILE-SPECIFIC RULES
+	Fantasy theme adjustments for mobile
+*/
+@media only screen and (max-device-width: 480px) {
+
+  tw-story {
+	  font-size: 2.5em;
+	  width: 100%;
+	  max-width: 98%;
+	  margin: 0 auto 0 auto;
+	  padding: 15% 3%;
+  }
+
+  tw-passage {
+	  width: 100%;
+	  padding: 1em;
+  }  
+  
+  /* Reduce glow effects on mobile for performance */
+  .enchantment-link, tw-link, a {
+	  text-shadow: 0 0 5px #ffd700;
+  }
+  
+}
