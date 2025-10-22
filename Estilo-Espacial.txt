@@ -1,0 +1,323 @@
+<style>
+/* ===== ESTILO GERAL SPACE FROG ===== */
+tw-story {
+  background-color: #0a0a2a;
+  color: #e0f0ff;
+  font-family: 'Courier New', monospace;
+  line-height: 1.5;
+  padding: 15px;
+  background-image: 
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 4px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 3px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 4px);
+  background-size: 550px 550px, 350px 350px, 250px 250px;
+  background-position: 0 0, 40px 60px, 130px 270px;
+  background-attachment: fixed;
+}
+
+tw-passage {
+  background-color: rgba(10, 15, 40, 0.85);
+  border: 3px solid #4f6fff;
+  padding: 25px;
+  max-width: 750px;
+  margin: 0 auto;
+  box-shadow: 
+    0 0 20px rgba(79, 111, 255, 0.6),
+    inset 0 0 20px rgba(79, 111, 255, 0.3);
+  position: relative;
+  border-image: linear-gradient(45deg, #4f6fff, #ff47b5, #4f6fff) 1;
+}
+
+/* Efeito de scanlines retrô */
+tw-passage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+/* ===== TÍTULOS ===== */
+tw-passage h1 {
+  color: #ff47b5;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 
+    0 0 10px rgba(255, 71, 181, 0.7),
+    2px 2px 0 #4f6fff;
+  border-bottom: 2px dashed #4f6fff;
+  padding-bottom: 15px;
+  font-size: 1.8em;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+tw-passage h2 {
+  color: #4fffc7;
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 0 0 5px rgba(79, 255, 199, 0.5);
+  border-left: 3px solid #4fffc7;
+  padding-left: 15px;
+  font-size: 1.3em;
+  margin-top: 25px;
+}
+
+tw-passage h3 {
+  color: #ffb347;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.1em;
+  text-shadow: 0 0 5px rgba(255, 179, 71, 0.5);
+}
+
+/* ===== LINKS ===== */
+tw-link {
+  color: #4fffc7;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  background-color: rgba(79, 255, 199, 0.1);
+  border: 1px solid #4fffc7;
+  padding: 8px 12px;
+  margin: 5px;
+  display: inline-block;
+  text-shadow: 0 0 5px rgba(79, 255, 199, 0.5);
+  box-shadow: 0 0 10px rgba(79, 255, 199, 0.3);
+}
+
+tw-link:hover {
+  color: #0a0a2a;
+  background-color: #4fffc7;
+  box-shadow: 
+    0 0 15px rgba(79, 255, 199, 0.8),
+    0 0 30px rgba(79, 255, 199, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ===== PARÁGRAFOS E TEXTO ===== */
+tw-passage p {
+  margin-bottom: 1.2em;
+  font-size: 1.1em;
+  text-shadow: 0 0 3px rgba(224, 240, 255, 0.3);
+}
+
+/* ===== DESTAQUES ===== */
+tw-passage strong {
+  color: #ffb347;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(255, 179, 71, 0.5);
+}
+
+tw-passage em {
+  font-style: italic;
+  color: #ff47b5;
+  text-shadow: 0 0 5px rgba(255, 71, 181, 0.3);
+}
+
+/* ===== CITAÇÕES ===== */
+tw-passage blockquote {
+  border-left: 3px solid #ff47b5;
+  padding-left: 20px;
+  margin: 20px 0;
+  font-style: italic;
+  background-color: rgba(255, 71, 181, 0.1);
+  padding: 15px;
+  border-radius: 0 5px 5px 0;
+  box-shadow: inset 0 0 10px rgba(255, 71, 181, 0.2);
+}
+
+/* ===== LISTAS ===== */
+tw-passage ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+tw-passage ul li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 30px;
+}
+
+tw-passage ul li::before {
+  content: "🛸";
+  position: absolute;
+  left: 0;
+  color: #4fffc7;
+  text-shadow: 0 0 5px rgba(79, 255, 199, 0.5);
+}
+
+tw-passage ol {
+  padding-left: 30px;
+  list-style-type: none;
+  counter-reset: space-counter;
+}
+
+tw-passage ol li {
+  margin-bottom: 10px;
+  counter-increment: space-counter;
+  position: relative;
+  padding-left: 35px;
+}
+
+tw-passage ol li::before {
+  content: counter(space-counter) ".";
+  position: absolute;
+  left: 0;
+  color: #ff47b5;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(255, 71, 181, 0.5);
+}
+
+/* ===== IMAGENS ===== */
+tw-passage img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #4f6fff;
+  border-radius: 5px;
+  box-shadow: 
+    0 0 15px rgba(79, 111, 255, 0.5),
+    0 0 30px rgba(79, 111, 255, 0.3);
+  margin: 15px 0;
+  image-rendering: pixelated;
+}
+
+/* ===== MENU LATERAL ===== */
+tw-sidebar {
+  background-color: rgba(10, 15, 40, 0.95);
+  border-right: 2px solid #4f6fff;
+  color: #e0f0ff;
+  box-shadow: 2px 0 10px rgba(79, 111, 255, 0.3);
+}
+
+tw-sidebar tw-link {
+  color: #4fffc7;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  text-shadow: 0 0 5px rgba(79, 255, 199, 0.5);
+}
+
+tw-sidebar tw-link:hover {
+  color: #0a0a2a;
+  background-color: #4fffc7;
+  box-shadow: 0 0 10px rgba(79, 255, 199, 0.8);
+}
+
+/* ===== RODAPÉ ===== */
+tw-passage footer {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px dashed #4f6fff;
+  font-size: 0.9em;
+  color: #ffb347;
+  font-style: italic;
+}
+
+/* ===== CLASSES ESPECIAIS ===== */
+.console {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid #4fffc7;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 15px 0;
+  font-family: 'Courier New', monospace;
+  color: #4fffc7;
+  box-shadow: 
+    inset 0 0 10px rgba(79, 255, 199, 0.2),
+    0 0 15px rgba(79, 255, 199, 0.3);
+}
+
+.alien {
+  color: #ff47b5;
+  text-shadow: 0 0 5px rgba(255, 71, 181, 0.5);
+  font-weight: bold;
+}
+
+.system {
+  color: #4f6fff;
+  text-shadow: 0 0 5px rgba(79, 111, 255, 0.5);
+  font-weight: bold;
+}
+
+.warning {
+  color: #ffb347;
+  text-shadow: 0 0 5px rgba(255, 179, 71, 0.5);
+  background-color: rgba(255, 179, 71, 0.1);
+  border: 1px solid #ffb347;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.glitch {
+  animation: glitch 0.5s infinite;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* ===== BOTÕES ESPECIAIS ===== */
+tw-link[data-style="danger"] {
+  color: #ff4747;
+  border-color: #ff4747;
+  background-color: rgba(255, 71, 71, 0.1);
+  box-shadow: 0 0 10px rgba(255, 71, 71, 0.3);
+}
+
+tw-link[data-style="danger"]:hover {
+  color: #0a0a2a;
+  background-color: #ff4747;
+  box-shadow: 
+    0 0 15px rgba(255, 71, 71, 0.8),
+    0 0 30px rgba(255, 71, 71, 0.4);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 600px) {
+  tw-story {
+    padding: 10px;
+  }
+  
+  tw-passage {
+    padding: 15px;
+  }
+  
+  tw-passage h1 {
+    font-size: 1.4em;
+  }
+  
+  tw-link {
+    display: block;
+    text-align: center;
+    margin: 8px 0;
+  }
+}
+</style>
+
+<!-- Fontes do Google -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
