@@ -1,0 +1,28 @@
+referencias twine
+Twine or Treat: https://www.youtube.com/playlist?list=PLujRcYYssj76Q_seiXpXnXxzpj1fULa0s
+
+Tutorials | Twine | Introduction to Passages, Storysheet, and Macros: https://www.youtube.com/watch?v=Skf14h18xyU
+
+Variables and Logic in Twine: https://www.youtube.com/watch?v=XtVBMBFSDxM
+
+How to Create Adventure Games using Twine:
+https://www.youtube.com/watch?v=Fp9Sxiv-O-0
+
+Twine for Beginners: How to create an interactive story online: https://www.youtube.com/watch?v=lhn39SPETMM
+
+Story formats: https://twinery.org/cookbook/terms/terms_storyformats.html
+
+Linking Passages | Twine Trail Guide - Chapbook:
+https://www.youtube.com/watch?v=3ll9p4wy23g
+
+Epoch's Twine Tutorials: https://www.youtube.com/playlist?list=PLIvHGSlL5cSQxNosixvLe0mUSvlm8QCh5
+
+Twine Tutorial! Ep4, CSS In Twine. Create Online Stories for FREE!:
+https://www.youtube.com/watch?v=b3Cg8Es0sUA&t=25s
+
+Twine 2.2: Learning Twine: Story Stylesheet:
+https://www.youtube.com/watch?v=GE_06UFb-O0
+
+How to Edit CSS in Twine
+https://www.youtube.com/watch?v=Ij3J_wBu3OU
+
