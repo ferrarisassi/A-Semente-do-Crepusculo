@@ -1,0 +1,7 @@
+{{importante}}Texto importante{{/importante}}
+
+{{dialogo}}— E então o mago falou...{{/dialogo}}
+
+{{magia}}Feitiço Arcano{{/magia}}
+
+{{brilho}}Item Lendário{{/brilho}}

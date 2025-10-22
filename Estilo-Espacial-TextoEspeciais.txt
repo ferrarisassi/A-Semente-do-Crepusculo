@@ -1,0 +1,11 @@
+{{console}}>> SISTEMA: Nave espacial detectada{{/console}}
+
+{{alien}}Zorbon: Salve, viajante espacial!{{/alien}}
+
+{{system}}Nave Frog-1 pronta para decolagem{{/system}}
+
+{{warning}}PERIGO: Campo de asteróides à frente{{/warning}}
+
+{{glitch}}SINAL INTERFERIDO{{/glitch}}
+
+{{pulse}}ENERGIA BAIXA{{/pulse}}
